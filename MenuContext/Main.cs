@@ -1,5 +1,6 @@
 using Financial.StringExtensionsContext;
 using Financial.InterestContext;
+using Financial.InterestContext.SimpleInterestContext;
 
 namespace Financial.MenuContext
 {
@@ -14,16 +15,19 @@ namespace Financial.MenuContext
             Console.WriteLine("4 - Juros Compostos com Aportes");
             Print.Header("0 - Sair", 50, '-');
 
-            int option = int.Parse(Console.ReadLine());
-            return option;
+            string? option = Console.ReadLine();
+            if (option != null)
+                return int.Parse(option);
+            return -1;
         }
 
-        public static void Mode(IInterest Interest)
+        public static void Mode(IInterest<SimpleInterest> Interest )
         {
             Console.Clear();
             Interest.GetInterestInputValues();
             Interest.Calculate();
             Interest.PrintValues();
+            Interest.CalculateDetails();
         }
     }
 

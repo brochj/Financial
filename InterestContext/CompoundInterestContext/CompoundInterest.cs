@@ -1,26 +1,40 @@
 using System.Globalization;
+using Financial.InterestContext.SimpleInterestContext;
 
 namespace Financial.InterestContext.CompoundInterestContext
 {
-    public class CompoundInterest : Interest
+    public class CompoundInterest : IInterest<CompoundInterest>
     {
-        public CompoundInterest(
-            decimal principal,
-            // decimal amount,
-            decimal rateOfInterest,
-            decimal time
-        )
+        public CompoundInterest()
         {
-            base.Principal = principal;
-            // base.Amount = amount;
-            base.RateOfInterest = rateOfInterest;
-            base.Time = time;
+            Details = new List<CompoundInterest>();
         }
+        public decimal Principal { get; set; }
+        public decimal Amount { get; set; }
+        public decimal RateOfInterest { get; set; }
+        public decimal Time { get; set; }
+        public decimal InterestValue { get; set; }
+        public List<CompoundInterest> Details { get; set; }
 
         public decimal Calculate()
         {
-            base.Amount = base.Principal * (decimal)Math.Pow((double)(1 + base.RateOfInterest), (double)base.Time);
-            return base.Amount - base.Principal;
+            Amount = Principal * (decimal)Math.Pow((double)(1 + RateOfInterest), (double)Time);
+            return Amount - Principal;
+        }
+
+        public void CalculateDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetInterestInputValues()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintValues()
+        {
+            throw new NotImplementedException();
         }
 
         public override string ToString()

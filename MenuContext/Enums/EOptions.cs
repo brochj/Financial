@@ -6,6 +6,7 @@ namespace Financial.MenuContext.Enums
         SimpleInterest = 1,
         SIWithContribuitions = 2,
         CompoundInterest = 3,
-        CIWithContribuitions = 4
+        CIWithContribuitions = 4,
+        Invalid = -1
     }
 }

@@ -1,30 +1,35 @@
 using System.Globalization;
+using Financial.InterestContext.SimpleInterestContext;
 
 namespace Financial.InterestContext.SIWithContribuitionsContext
 {
-    public class SIWithContribuitions : Interest
+    public class SIWithContribuitions : IInterest<SIWithContribuitions>
     {
-        public SIWithContribuitions(
-            decimal principal,
-            // decimal amount,
-            decimal rateOfInterest,
-            decimal time
-        )
-        {
-            base.Principal = principal;
-            // base.Amount = amount;
-            base.RateOfInterest = rateOfInterest;
-            base.Time = time;
-        }
+        public decimal Principal { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public decimal Amount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public decimal RateOfInterest { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public decimal Time { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public decimal InterestValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<SIWithContribuitions> Details { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public decimal Calculate()
         {
-            return base.Principal * base.RateOfInterest * base.Time;
+            throw new NotImplementedException();
         }
 
-        public override string ToString()
+        public void CalculateDetails()
         {
-            return Calculate().ToString("C", CultureInfo.GetCultureInfo("pt-BR"));
+            throw new NotImplementedException();
+        }
+
+        public void GetInterestInputValues()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintValues()
+        {
+            throw new NotImplementedException();
         }
     }
 }
