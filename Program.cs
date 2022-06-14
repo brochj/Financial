@@ -16,7 +16,7 @@ switch (option)
     case (int)EOptions.Exit: Environment.Exit(Environment.ExitCode); break;
     case (int)EOptions.SimpleInterest: Main.Mode(new SimpleInterest()); break;
     // case (int)EOptions.SIWithContribuitions:; break;
-    // case (int)EOptions.CompoundInterest:; break;
+    case (int)EOptions.CompoundInterest: Main.Mode(new CompoundInterest()); break;
     // case (int)EOptions.CIWithContribuitions:; break;
     case (int)EOptions.Invalid: Main.Menu(); break;
 }

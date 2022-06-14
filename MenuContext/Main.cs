@@ -21,7 +21,7 @@ namespace Financial.MenuContext
             return -1;
         }
 
-        public static void Mode(IInterest<SimpleInterest> Interest )
+        public static void Mode<T>(IInterest<T> Interest)
         {
             Console.Clear();
             Interest.GetInterestInputValues();

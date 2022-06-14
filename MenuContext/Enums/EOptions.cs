@@ -1,6 +1,6 @@
 namespace Financial.MenuContext.Enums
 {
-    public enum EOptions : int
+    public enum EOptions
     {
         Exit = 0,
         SimpleInterest = 1,
